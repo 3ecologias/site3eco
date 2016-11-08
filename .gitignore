@@ -24,7 +24,8 @@ core/migrations/*
 *.egg-info/
 .installed.cfg
 *.egg
-ecosite/settings.py
+settings.py
+settings.pyc
 core/migrations/
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -94,3 +95,7 @@ ENV/
 
 mydatabase
 db.sqlite3
+
+#Arquivos de midia
+
+media/

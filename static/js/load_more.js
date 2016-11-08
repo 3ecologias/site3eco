@@ -11,8 +11,6 @@ $(document).ready(function(){
             url: "/ajax/more/",
             success: function(data) {
 
-                alert(clicks);
-
                 var i = 0;
                 var ports;
                 if(clicks == 1){
