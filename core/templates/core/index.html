@@ -21,9 +21,12 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/clientslider.css' %}" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
     <link href="{% static 'css/agency.css' %}" rel="stylesheet">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -140,7 +143,7 @@
                 <button class="btn btn-xl show-more">Carregar mais</button>
             </div>
             <div class="col-lg-12 text-center">
-                <button class="btn btn-xl show-less"">Recolher</button>
+                <button class="btn btn-xl show-less">Recolher</button>
             </div>
         </div>
     </section>
@@ -175,29 +178,57 @@
     <aside class="clients">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/logos/microlancer.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
+              <!-- <div class="col-md-12 text-center"><h3>Product Carousel <span style="color:red"> preview it on actual browser</span></h3></div> -->
+              <div class="col-md-10 col-md-offset-1">
+                <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
+                  <div class="carousel-inner">
+                    <div class="item active">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/artemov.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/claro.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/continuum.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/designmodo.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/fundarpe.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/gig.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/habitat.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/mam.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/mozilla.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/oif_futuro.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/ufba.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/ufpe.jpg' %}" class="img-responsive"></div>
+                    </div>
+                    <div class="item">
+                      <div class="col-md-2 col-sm-6 col-xs-12"><img src="{% static 'img/logos/ufrj.jpg' %}" class="img-responsive"></div>
+                    </div>
+                  </div>
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/logos/aetuts.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/logos/designmodo.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="http://globalinnovationgathering.com" target="_blank">
-                        <img src="{% static 'img/logos/wordpress.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
+              </div>
             </div>
         </div>
-    </aside>
+      </aside>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -251,9 +282,13 @@
     <!-- Theme JavaScript -->
     <script src="{% static 'js/agency.min.js' %}"></script>
 
-    <!-- loadmore-->
 
+    <!-- loadmore-->
     <script src="{% static 'js/load_more.js' %}"></script>
+
+    <!-- SlideClient -->
+    <script src="{% static 'js/clientslider.js' %}"></script>
+
 
 </body>
 
