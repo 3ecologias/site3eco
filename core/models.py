@@ -12,7 +12,7 @@ class Post(models.Model):
 	"""Model for a post"""
 	title = models.CharField(max_length=250)
 	date = models.DateTimeField()
-	text = models.TextField()
+	text = RichTextField()
 	thumb = models.ImageField(upload_to='thumbs/%Y/%m/%d/', null=True, blank=False)
 
 	def publish(self):
