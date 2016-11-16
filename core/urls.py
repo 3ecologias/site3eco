@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^$', views.fullsite),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^sucess/', views.contact_sucess),
-    url(r'^ajax/more/$', views.load_more),	
+    url(r'^ajax/more/$', views.load_more),
+    url(r'^ajax/more-posts/$', views.load_more_posts),		
 ]
 
 urlpatterns += staticfiles_urlpatterns()

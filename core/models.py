@@ -47,18 +47,18 @@ class Portfolio(models.Model):
 	"""Model for Portfolio"""
 
 	# Miniature #
-	miniature_title = models.CharField(max_length=30)
-	category = models.CharField(max_length=30)
-	miniature_image = models.ImageField(upload_to='portfolio/miniatures/%Y/%m/%d', null=True, blank=False)
+	miniature_title = models.CharField(max_length=1000, blank=True)
+	category = models.CharField(max_length=1000, blank=True)
+	miniature_image = models.ImageField(upload_to='portfolio/miniatures/%Y/%m/%d', null=True, blank=True)
 
 	#Full Product #
 
-	project_name = models.CharField(max_length=30)
-	intro = models.CharField(max_length=30)
-	image = models.ImageField(upload_to='portfolio/images/%Y/%m/%d', null=True, blank=False)
-	description = RichTextField()
-	date = models.DateField()
-	client = models.CharField(max_length=20)
+	project_name = models.CharField(max_length=1000, blank=True)
+	intro = models.CharField(max_length=1000, blank=True)
+	image = models.ImageField(upload_to='portfolio/images/%Y/%m/%d', null=True, blank=True)
+	description = RichTextField(blank=True)
+	date = models.DateField(null=True, blank=True)
+	client = models.CharField(max_length=1000, blank=True)
 
 	def __unicode__(self):
 		return self.project_name

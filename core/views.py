@@ -20,7 +20,7 @@ def fullsite(request):
 
 	## Posts ##
 
-	context_general["posts"] = Post.objects.order_by('date')
+	context_general["posts"] = Post.objects.order_by('-date')[:3]
 	
 	## Form ##
 
@@ -85,5 +85,15 @@ def load_more(request):
 		ports_json = serializers.serialize('json', new_ports)
 
 		return HttpResponse(ports_json, content_type='application/json')
+	else:
+		return Http404
+
+def load_more_posts(request):
+
+	if request.is_ajax():
+		new_posts = Post.objects.all().order_by('-date')[3:]
+		posts_json = serializers.serialize('json', new_posts)
+
+		return HttpResponse(posts_json, content_type='application/json')
 	else:
 		return Http404

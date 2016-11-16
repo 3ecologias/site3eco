@@ -159,14 +159,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="timeline">
+                    <ul class="timeline" id="posts-list">
                         {% include 'core/post_list.html' %}
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>Seja parte
-                                <br>de nossa
-                                <br>história!</h4>
-                        </div>
+                    <li class="timeline-inverted" id="last-timeline">
+                        <button class="btn btn-xl timeline-image show-more-posts">Ver <br> mais <br> posts</button>
                     </li>
                     </ul>
                 </div>
@@ -285,6 +281,8 @@
 
     <!-- loadmore-->
     <script src="{% static 'js/load_more.js' %}"></script>
+    <script src="{% static 'js/load_more_posts.js' %}"></script>
+
 
     <!-- SlideClient -->
     <script src="{% static 'js/clientslider.js' %}"></script>
