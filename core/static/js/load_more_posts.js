@@ -10,6 +10,8 @@ $(document).ready(function(){
             url: "/ajax/more-posts/",
             success: function(data) {
                 if(clicks < data.length){
+                    var spl = data[clicks].fields.date.split('-');
+                    var year = spl[0];
                     //Posts
                     if((clicks%2)==0){
                         $('body, html').animate({ scrollTop: $("#posts-list li:last-child").offset().top - $(window).height()/2 + 70 }, 1000);
@@ -20,7 +22,7 @@ $(document).ready(function(){
                                 '<div class="timeline-panel">'+
                                     '<div class="timeline-heading">'+
                                         '<h4>'+data[clicks].fields.title+'</h4>'+
-                                        '<h5 class="subheading">'+data[clicks].fields.date+'</h5>'+
+                                        '<h5 class="subheading">'+year+'</h5>'+
                                     '</div>'+
                                     '<div class="timeline-body">'+
                                         '<p class="text-muted">'+data[clicks].fields.text+'</p>'+
@@ -38,7 +40,7 @@ $(document).ready(function(){
                                 '<div class="timeline-panel">'+
                                     '<div class="timeline-heading">'+
                                         '<h4>'+data[clicks].fields.title+'</h4>'+
-                                        '<h5 class="subheading">'+data[clicks].fields.date+'</h5>'+
+                                        '<h5 class="subheading">'+year+'</h5>'+
                                     '</div>'+
                                     '<div class="timeline-body">'+
                                         '<p class="text-muted">'+data[clicks].fields.text+'</p>'+
