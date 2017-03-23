@@ -46,6 +46,9 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+h4{
+  font-size: 90%;
+}
 .img-centered {
   margin: 0 auto;
 }
