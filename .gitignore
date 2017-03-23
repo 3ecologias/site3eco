@@ -20,13 +20,9 @@ lib64/
 parts/
 sdist/
 var/
-core/migrations/*
 *.egg-info/
 .installed.cfg
 *.egg
-settings.py
-settings.pyc
-core/migrations/
 *.pyc
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -118,12 +114,3 @@ tests/.coverage
 build/
 tests/report/
 =======
-#Arquivos de midia
-
-media/
->>>>>>> 92e91b9a116793b4fada8f46c526f500fba39725
-=======
-#Arquivos de midia
-
-media/
->>>>>>> 92e91b9a116793b4fada8f46c526f500fba39725
