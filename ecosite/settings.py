@@ -25,7 +25,7 @@ SECRET_KEY = 'tmp9u0lns(wui)u*ii*wq*_o^zc+x82-+&5#1288_u5ety-q5e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['3ecologias.net', 'www.3ecologias.net']
 
 
 # Application definition
