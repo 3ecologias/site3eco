@@ -27,7 +27,7 @@ class ContactForm(forms.Form):
     name = forms.CharField(
     	required=True,
     	widget=forms.TextInput(
-    		attrs={'placeholder': 'Nome *', 'id': 'name', 'class': 'form-control'}))
+    		attrs={'placeholder': 'Nome *', 'id': 'name', 'class': 'form-control input-lg', 'type': 'text'}))
 
     email_contact = forms.EmailField(required=True,
     	widget=forms.EmailInput(

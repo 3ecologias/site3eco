@@ -1,11 +1,13 @@
 $(document).ready(function(){
-    var clicks = 1;
+    var clicks = 0;
 
     $('.show-less').hide().fadeOut("slow");
 
     // AJAX GET
     $('.show-more').click(function(){
-
+        if (clicks <= 2){
+          clicks += 1;
+        }
         $.ajax({
             type: "GET",
             url: "/ajax/more/",
@@ -25,7 +27,7 @@ $(document).ready(function(){
                     $('.show-more').text('Carregar mais');
                     $('.show-more').hide().fadeOut("slow");
                     $('.show-less').show().fadeIn(2000);
-                
+
                 }
 
                 for(i; i < ports; i++){
@@ -79,10 +81,8 @@ $(document).ready(function(){
                 }
                 if(clicks == 1){
                     $('body, html').animate({ scrollTop: $("#portfolio-load-grid .portfolio-item:nth-child(4)").offset().top - 70 }, 1000);
-                    clicks += 1;
                 }else if (clicks == 2){
                     $('body, html').animate({ scrollTop: $("#portfolio-load-grid .portfolio-item:nth-child(7)").offset().top - 70 }, 1000);
-                    clicks = 1;
                 }
 
         }
@@ -126,7 +126,7 @@ $(document).ready(function(){
 
     // Recolher
 
-    
+
 
     $('.show-less').click(function(){
 
@@ -135,6 +135,7 @@ $(document).ready(function(){
         $('.show-more').show().fadeIn(2000);
         $('.show-less').hide().fadeOut("slow");
         $('body, html').animate({ scrollTop: $("#portfolio-load-grid .portfolio-item:first-child").offset().top - 70 }, 1000);
+        clicks = 0;
 
     });
 });

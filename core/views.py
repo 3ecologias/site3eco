@@ -57,7 +57,7 @@ def fullsite(request):
 				"Novo contato",
 				content,
 				"3Ecologias" +'',to=
-				['admin@3ecologias.net'],
+				['lucazartu@gmail.com'],
 				headers = {'Reply-To': email_contact }
  			)
 			email.send()

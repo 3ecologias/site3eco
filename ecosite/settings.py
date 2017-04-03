@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tmp9u0lns(wui)u*ii*wq*_o^zc+x82-+&5#1288_u5ety-q5e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#Production
+DEBUG = False
 
 ALLOWED_HOSTS = ['3ecologias.net', 'www.3ecologias.net']
+#DEV
+# DEBUG = True
+#
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,7 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #media files
 
-MEDIA_ROOT = '/home/capivara/site3eco/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
