@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
@@ -13,6 +14,12 @@ from django.db.models import Count
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core import serializers
 
+from django.conf import settings
+import urllib
+import urllib2
+import json
+
+
 
 
 def fullsite(request):
@@ -21,7 +28,7 @@ def fullsite(request):
 	## Posts ##
 
 	context_general["posts"] = Post.objects.order_by('-date')[:3]
-	
+
 	## Form ##
 
 	form_class = ContactForm
@@ -39,7 +46,7 @@ def fullsite(request):
 
 			content = request.POST.get('content', '')
 
-            # Email the profile with the 
+            # Email the profile with the
             # contact information
 			template = get_template('core/email_template.txt')
 
@@ -56,13 +63,29 @@ def fullsite(request):
 			email = EmailMessage(
 				"Novo contato",
 				content,
-				"3Ecologias" +'',to=
-				['lucazartu@gmail.com'],
-				headers = {'Reply-To': email_contact }
+				email_contact,
+				['admin@3ecologias.net']
  			)
-			email.send()
-			return HttpResponseRedirect('/sucess')
-			
+
+			''' Begin reCAPTCHA validation '''
+			recaptcha_response = request.POST.get('g-recaptcha-response')
+			url = 'https://www.google.com/recaptcha/api/siteverify'
+			values = {
+				'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+				'response': recaptcha_response
+	        }
+			data = urllib.urlencode(values)
+			req = urllib2.Request(url, data)
+			response = urllib2.urlopen(req)
+			result = json.load(response)
+			''' End reCAPTCHA validation '''
+			if result['success']:
+				email.send()
+				messages.success(request, 'Seu contato foi enviado com sucesso!')
+			else:
+				messages.error(request, 'reCAPTCHA inválida. Por favor, tente novamente.')
+			return HttpResponseRedirect('/')
+
 
 	context_general["form"] = form_class
 
@@ -75,7 +98,7 @@ def contact_sucess(request):
 
 	if request.method == 'POST':
 			return HttpResponseRedirect('/')
-	
+
 	return render(request, 'core/success_form.html', {})
 
 def load_more(request):

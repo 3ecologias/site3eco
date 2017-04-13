@@ -78,8 +78,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ecosite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+Database
+https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -146,12 +146,16 @@ MEDIA_URL = '/media/'
 
 #Email Configuration
 
-DEFAULT_FROM_EMAIL = 'admin@3ecologias.net'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'juliaroberts@3ecologias.net'
-EMAIL_HOST_PASSWORD = 'Tatub0lana0b0la'
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = "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"
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'admin@3ecologias.net'
+EMAIL_HOST_USER = '3ecologias'
+EMAIL_HOST_PASSWORD = 'm1c0leao'
+EMAIL_USE_TLS = True
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6Ld67RwUAAAAAIq98bikMGJrlkRoNwwrSuqrrmv4'
 
 #CKEDITOR
 

@@ -2,3 +2,4 @@ django
 Pillow
 psycopg2
 django-ckeditor
+sendgrid-django
